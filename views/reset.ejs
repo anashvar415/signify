@@ -1,0 +1,17 @@
+<div class="container d-flex justify-content-center align-items-center min-vh-80">
+    <div class="card shadow-lg p-4" style="max-width: 500px; width: 100%;">
+      <div class="card-body text-center">
+        <h3 class="card-title mb-4 text-primary">Password Reset Successful!</h3>
+        <p class="fs-5"><strong> Welcome <%= username %></strong></p>
+       <form action="/reset" method="post">
+       
+        <div class="mb-3">
+          <label for="Repassword" class="form-label">Password</label>
+          <input type="password" class="form-control" id="Repassword" name="Repassword" required />
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Reset Password</button>
+      </form>
+        
+      </div>
+    </div>
+  </div>

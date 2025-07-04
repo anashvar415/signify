@@ -1,0 +1,40 @@
+<% if (success && success.length) { %>
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <%= success %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% } %>
+
+<% if (error && error.length) { %>
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <%= error %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% } %>
+
+<div class="d-flex justify-content-center align-items-center mt-5 p-5" >
+  <div class="card shadow-sm border-0" style="width: 28rem;">
+    <div class="card-body p-4">
+     <% if(!(success && success.length)) { %> 
+      <h3 class="card-title text-center mb-4">Forgot Password</h3>
+      
+      <form action="/forget" method="POST">
+        <div class="mb-3">
+          <label for="email" class="form-label">Enter your registered email</label>
+          <input type="email" class="form-control" id="email" name="email" required />
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Send Verification Code</button>
+      </form>
+      
+     <% } if(success && success.length){%>
+      <form action="/verify" method="POST">
+        <div class="mb-3">
+          <label for="verification" class="form-label">Enter the code</label>
+          <input type="number" class="form-control" id="verification" name="verification" required />
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Verify</button>
+      </form>
+      <% } %>
+    </div>
+  </div>
+</div>
