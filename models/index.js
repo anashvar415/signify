@@ -4,7 +4,7 @@ const user = require('./user.js');
 const indata = require('./data.js');
 
 async function main() {
-    await mongoose.connect("mongodb://127.0.0.1:27017/Dbuser?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.5.2");
+    await mongoose.connect(process.env.MONGO);
     console.log("connected to  DB");
 
     await user.deleteMany({});
