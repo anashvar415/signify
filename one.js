@@ -128,7 +128,10 @@ app.get('/logout', isLoggedIn, (req, res) => {
         req.flash("success", "Logged out successfully");
         res.redirect('/');
     })});
-app.listen(3000, () => {
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
   console.log("Server is running on http://localhost:3000");});
   app.get('/forget', (req,res)=>{
   
