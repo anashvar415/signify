@@ -4,7 +4,10 @@ const user = require('./user.js');
 const indata = require('./data.js');
 
 async function main() {
-    await mongoose.connect(process.env.MONGO);
+    await mongoose.connect(process.env.MONGO,{
+     useNewUrlParser: true,
+  useUnifiedTopology: true});
+
     console.log("connected to  DB");
 
     await user.deleteMany({});
