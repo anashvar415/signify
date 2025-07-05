@@ -51,7 +51,9 @@ app.use((req, res, next) => {
 });
 
 async function main(){
-await mongoose.connect(process.env.MONGO);
+await mongoose.connect(process.env.MONGO,{ useNewUrlParser: true,
+  useUnifiedTopology: true
+                                         });
 
         
     }
