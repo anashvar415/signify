@@ -26,8 +26,4 @@
     "passport-local-mongoose": "^8.0.0",
     "passport-magic-link": "^2.1.1"
   }
-<<<<<<< HEAD
-}
-=======
-}
->>>>>>> 5d9a7b104644f838ad0002e101b30dee54f540f9
+
